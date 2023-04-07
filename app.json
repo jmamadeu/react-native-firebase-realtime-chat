@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "react-native-firebase-realtime-chat",
+    "slug": "react-native-firebase-realtime-chat",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
