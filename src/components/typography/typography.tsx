@@ -1,10 +1,12 @@
-import { StyleSheet, Text, TextStyle } from "react-native";
+import { StyleSheet, Text, TextProps, TextStyle } from "react-native";
 
-type TypographyProps = {
+type TypographyProps = TextProps & {
   children?: React.ReactNode;
   bodyMedium?: boolean;
   weight?: TextStyle["fontWeight"];
   color?: TextStyle["color"];
+  link?: boolean;
+  p?: boolean;
 };
 
 export const Typography: React.FC<TypographyProps> = ({
@@ -12,6 +14,10 @@ export const Typography: React.FC<TypographyProps> = ({
   weight,
   children,
   color,
+  link,
+  p,
+  style,
+  ...props
 }) => {
   const styles = StyleSheet.flatten<TextStyle>([
     bodyMedium !== undefined && {
@@ -20,7 +26,20 @@ export const Typography: React.FC<TypographyProps> = ({
     },
     weight !== undefined && { fontWeight: weight },
     color !== undefined && { color },
+    link !== undefined && {
+      color: "#0A77FF",
+    },
+    p !== undefined && {
+      textAlign: "center",
+      color: "#5A6472",
+      fontSize: 14,
+      fontWeight: "500",
+    },
   ]) as TextStyle;
 
-  return <Text style={styles}>{children}</Text>;
+  return (
+    <Text style={[styles, style]} {...props}>
+      {children}
+    </Text>
+  );
 };

@@ -8,7 +8,7 @@ import {
 } from "@expo/vector-icons";
 import { Block, Typography } from "~/components";
 
-export const ChatScreen = () => {
+const ChatScreen = () => {
   return (
     <Block flex={1} justifyContent="space-between">
       <Block
@@ -45,6 +45,26 @@ export const ChatScreen = () => {
           </Block>
         </Block>
       </Block>
+      <Block flex={1} px={20} justifyContent="flex-end" gap={12} py={16}>
+        <Block sentMessage>
+          <Typography color={"#fff"} bodyMedium>
+            1 - Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim
+            assumenda earum est magnam id. Quo recusandae, culpa{" "}
+          </Typography>
+          <Typography style={{ textAlign: "right", color: "#B1CCFB" }}>
+            10:05 PM
+          </Typography>
+        </Block>
+
+        <Block receivedMessage>
+          <Typography color={"black"} bodyMedium>
+            2 - Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim
+          </Typography>
+          <Typography style={{ textAlign: "right", color: "#7C8B9D" }}>
+            10:05 PM
+          </Typography>
+        </Block>
+      </Block>
 
       <Block
         h={90}
@@ -67,6 +87,7 @@ export const ChatScreen = () => {
               fontWeight: "400",
               fontSize: 16,
               flex: 1,
+              height: 52,
             }}
             placeholder="Message..."
             placeholderTextColor="#5F6D7E"
@@ -78,3 +99,5 @@ export const ChatScreen = () => {
     </Block>
   );
 };
+
+export default ChatScreen;

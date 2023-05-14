@@ -21,7 +21,8 @@ module.exports = function(api) {
             '~': './src'
           }
         }
-      ]
+      ],
+      require.resolve("expo-router/babel")
     ]
   };
 };
